@@ -1,9 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { SearchPhotoComponentProps } from "../Interfaces";
 
-const SearchPhoto = (props) => {
-  const [term, setTerm] = useState("");
+const SearchPhoto: React.FC<SearchPhotoComponentProps> = (props) => {
+  const [term, setTerm] = useState<string>("");
 
-  const submitForm = (e) => {
+  const submitForm = (e: React.FormEvent) => {
     e.preventDefault();
     props.setTerm(term);
   };

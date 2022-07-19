@@ -2,7 +2,7 @@ import axios from "axios";
 
 axios.defaults.baseURL = "https://api.unsplash.com/search";
 
-export const getPhotoRequest = (term) => {
+export const getPhotoRequest = (term: string) => {
   return axios.get("/photos", {
     // client details
     headers: {

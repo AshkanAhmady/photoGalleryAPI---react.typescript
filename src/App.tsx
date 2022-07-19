@@ -5,11 +5,11 @@ import PhotoList from "./components/PhotoList";
 import { getPhotoRequest } from "./Services/httpRequests";
 import Loading from "./components/Loading";
 
-const App = () => {
+const App: React.FC = () => {
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const setTerm = async (term) => {
+  const setTerm = async (term: string) => {
     setLoading(true);
     try {
       const { data } = await getPhotoRequest(term);
@@ -22,7 +22,7 @@ const App = () => {
 
   return (
     <>
-      <SearchPhoto setTerm={(term) => setTerm(term)} />
+      <SearchPhoto setTerm={(term: string) => setTerm(term)} />
       <PhotoList photos={photos} />
       {loading && <Loading />}
     </>

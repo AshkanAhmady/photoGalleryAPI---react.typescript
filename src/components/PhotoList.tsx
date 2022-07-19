@@ -1,10 +1,11 @@
 import "../App.css";
+import { PhotoListComponentProps } from "../Interfaces";
 import ImageCard from "./ImageCard";
 
-function PhotoList({ photos }) {
+const PhotoList: React.FC<PhotoListComponentProps> = ({ photos }) => {
   return (
     <div className="photos-box">
-      {photos.map((image) => (
+      {photos.map((image: any) => (
         <ImageCard image={image} key={image.id} />
       ))}
     </div>
